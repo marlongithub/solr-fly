@@ -1,6 +1,6 @@
 FROM solr:9.9
 ENV SOLR_MODULES=extracting
-ENV SOLR_HEAP=512m
+ENV SOLR_HEAP=192m
 ENV SOLR_OPTS="-Dsolr.jetty.host=0.0.0.0"
 
 # Opção A
