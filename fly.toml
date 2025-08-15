@@ -1,0 +1,16 @@
+app = "solr-marlon"       # pode trocar, mas use o mesmo nome no Fly
+primary_region = "gru"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[[mounts]]
+  source = "solrdata"       # vamos criar este volume no Fly
+  destination = "/var/solr" # onde o Solr persiste dados
+
+[http_service]
+  internal_port = 8983
+  force_https = true
+  auto_start_machines = true
+  auto_stop_machines = "off"
+  min_machines_running = 1
