@@ -15,13 +15,18 @@ primary_region = "gru"
   auto_stop_machines = "off"
   min_machines_running = 1
 
-  # checks deve ser ARRAY: use [[http_service.checks]] (pode ter vários)
   [[http_service.checks]]
     method = "get"
     path = "/solr/admin/info/system?wt=json"
     interval = "10s"
-    timeout = "5s"
+    timeout  = "5s"
     grace_period = "30s"
+
+[vm]
+  cpu_kind = "shared"
+  cpus = 1
+  memory = 1024   # <<< use 1024 MB (recomendado). 512 MB é o mínimo que costuma iniciar.
+
 
 
   
