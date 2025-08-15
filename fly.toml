@@ -15,14 +15,14 @@ primary_region = "gru"
   auto_stop_machines = "off"
   min_machines_running = 1
 
-  # Health-check explícito no endpoint do Solr
-  [http_service.checks]
-    [http_service.checks.http]
-      # usa a mesma porta do serviço
-      interval = "10s"
-      timeout = "5s"
-      method = "GET"
-      path = "/solr/admin/info/system?wt=json"
+  # checks deve ser ARRAY: use [[http_service.checks]] (pode ter vários)
+  [[http_service.checks]]
+    method = "get"
+    path = "/solr/admin/info/system?wt=json"
+    interval = "10s"
+    timeout = "5s"
+    grace_period = "30s"
+
 
   
 
