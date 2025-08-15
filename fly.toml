@@ -1,4 +1,4 @@
-app = "solr-marlon"      # use exatamente este nome ao criar o app
+app = "solr-marlon"
 primary_region = "gru"
 
 [build]
@@ -14,5 +14,16 @@ primary_region = "gru"
   auto_start_machines = true
   auto_stop_machines = "off"
   min_machines_running = 1
+
+  # Health-check explícito no endpoint do Solr
+  [http_service.checks]
+    [http_service.checks.http]
+      # usa a mesma porta do serviço
+      interval = "10s"
+      timeout = "5s"
+      method = "GET"
+      path = "/solr/admin/info/system?wt=json"
+
+  
 
 
