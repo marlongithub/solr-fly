@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-  APP_NAME: solr-marlon     # use o MESMO nome no fly.toml: app = "solr-marlon"
+  APP_NAME: solr-marlon
   REGION: gru
   VOLUME_NAME: solrdata
   VOLUME_SIZE: 3
