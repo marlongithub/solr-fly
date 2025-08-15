@@ -1,4 +1,4 @@
-app = "solr-fly-c-qreq"
+app = "solr-marlon"      # use exatamente este nome ao criar o app
 primary_region = "gru"
 
 [build]
@@ -14,4 +14,5 @@ primary_region = "gru"
   auto_start_machines = true
   auto_stop_machines = "off"
   min_machines_running = 1
+
 
